@@ -1,0 +1,286 @@
+<!DOCTYPE html>  <!-- This is to tell the browser what version of HTML you are using so that it can load in assets and interpert the code corectly. Placed before the HTML Header-->
+<html> 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" type="text/css" href="External_demo.css">
+	  <link rel="icon" type="image" href="Images/Favicon_and_Logo.ico">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+        <title>Evolution.gg</title>  
+        <style>
+          /* Reset the layout */
+          * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+          }
+
+          /* Main section containers */
+          section {
+            width: 100%;
+            clear: both;
+            display: block;
+            margin-bottom: 50px;
+          }
+
+          /* Image gallery section */
+          h1 {
+            color: black;
+            text-align: center;
+            position: relative;
+            margin-bottom: 20px;
+          }
+
+          p {
+            color: black;
+          }
+
+          .column {
+            float: left;
+            width: 33.33%;
+            padding: 5px;
+          }
+
+          .row::after {
+            content: "";
+            clear: both;
+            display: table;
+          }
+
+          @media screen and (max-width: 500px) {
+            .column {
+              width: 100%;
+            }
+          }
+
+          /* Featured Products Section - completely separate styling */
+          .categories {
+            width: 100%;
+            display: block;
+            margin-top: 80px; /* Add extra space above featured products */
+            padding-top: 20px;
+            border-top: 2px solid #eee; /* Visual separator */
+          }
+
+          .small-container {
+            max-width: 1080px;
+            margin: auto;
+            padding-left: 25px;
+            padding-right: 25px;
+          }
+
+          .small-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+          }
+
+          .product-row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+          }
+
+          .product-item {
+            flex-basis: 25%;
+            padding:  10px;
+            flex: 0 0 calc(33.33% - 30px);
+            min-width: 200px;
+            margin-bottom: 50px;
+            position: relative;
+            transition: transform 0.5s, 
+
+          }
+
+          .product-item img {
+            width: 100%;
+            flex-basis: 25%;
+            padding:  10px;
+            min-width: 200px;
+            margin-bottom: 50px;
+            position: relative;
+          }
+
+          .product-item h4 {
+            text-align: center;
+            margin-top: 10px;
+          }
+
+          .product-item:hover{
+            transform: translateY(-5px);
+          }
+
+          </style>
+</head>
+
+<!--Main body for website-->
+<body> 
+    <style>
+    body {
+        font-family: "Oswald", serif;}
+
+ 
+    </style>
+
+    <header> 
+        <nav> <!--Navigation bar and page links-->
+            <h2 class="logo"><a href = "index.HTML">Logo</a></h2>
+            <div class ="topnav">
+                <ul>
+                    <li><a href="index.HTML">Home</a></li>
+                    <li><a href="Products.HTML">Products</a></li>
+                    <li>Information</li>
+                    <li><a href="Contact.HTML">Contact Us</a></li>
+                </ul>
+              </div>
+        </nav>
+</header>
+</body>
+
+<!--tags for the sections-->
+<section_upper>
+<div class="slideshow-container">
+  <div class="mySlides fade">
+    <img src="Images/jldnyv1qumitk5yp-0_0_desktop_0_2X.jpg" style="width:100%">
+    <div class="text">Caption Text</div>
+  </div>
+  
+  <div class="mySlides fade">
+    <img src="Images/desktop-image-250423-LianLi-LanCool-207.avif" style="width:100%">
+    <div class="text">Caption Two</div>
+  </div>
+  
+  <div class="mySlides fade">
+    <img src="Images/1150x320@2x.jpg" style="width:100%">
+    <div class="text">Caption Three</div>
+  </div>
+
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+</div>
+
+
+
+    
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    // Next/previous controls
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+    </script>
+</section_upper>
+<section>
+  <!-- Three-Column Image Section -->
+  <section class="product-preview">
+    <div class="row">
+      <h1>All your gaming needs in one place</h1>
+      <div class="column">
+        <img src="Images/istockphoto-1314343964-612x612.jpg" alt="Gaming PCs" style="width:100%">
+      </div>
+      <div class="column">
+        <img src="Images/X670_Family_landscape.0.jpg" alt="Hardware and Components" style="width:100%">
+      </div>
+      <div class="column">
+        <img src="Images/image.png" alt="Games" style="width:100%">
+      </div>
+    </div>
+  </section>
+  
+  <!-- Featured Items Section -->
+  <section class="featured-products">
+    <div class="categories">
+      <div class="small-container">
+        <h2>Featured Products</h2>
+        <div class="product-row">
+          <div class="product-item">
+            <img src="Images/71frUjQMwyL.jpg">
+            <h4>Gaming keyboard and mouse combo</h4>
+            <p>£50.00</p>
+          </div>
+          <div class="product-item">
+            <img src="Images/3742054-dmc5(1).jpg">
+            <h4>Devil May Cry 5 Special Edition</h4>
+            <p>£15.00</p>
+          </div>
+          <div class="product-item">
+            <img src="Images/ASUS-ROG-Zephyrus-G14-GA401QM-XS98Q-AMD-Ryzen-9-5900HS-4-6-GHz-Win-10-Pro-GF-RTX-3060-32-GB-RAM-1-TB-SSD-NVMe-14-2560-x-1440-WQHD-120-Hz.webp">
+            <h4>ASUS ROG Gaming Laptop</h4>
+            <p>£1239.00</p>
+          </div>
+          <div class="product-item">
+              <img src="Images/MBpic.webp">
+              <h4>Motherboard CPU combo</h4>
+              <p>£539.00</p>
+          </div>
+          <div class="product-item">
+            <img src="Images/persona-5-japanese-cover.jpg">
+            <h4>Persona 5</h4>
+            <p>£39.00</p>
+        </div>
+        <div class="product-item">
+          <img src="Images/Gaming headset.webp">
+          <h4>Arctis 7 Nova Pro</h4>
+          <p>£80.00</p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+</section>
+<footer>
+  <div class="row">
+    <div class="footer-col-1">
+      <h3>Useful Links</h3>
+      <ul>
+        <li>Coupons</li>
+        <li>Blogs Post</li>
+        <li>Return Policy</li>
+        <li>Join Affiliate program</li>
+      </ul>
+    </div>
+    <div class="footer-col-2">
+      <h3>Socials</h3>
+      <ul>
+        <li>Facebook</li>
+        <li>Twitter</li>
+        <li>Instagram</li>
+        <li>YouTube</li>
+      </ul>
+    </div>
+  </div>
+
+</footer>
+</html>
